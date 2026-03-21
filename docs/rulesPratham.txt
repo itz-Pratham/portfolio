@@ -1,0 +1,1460 @@
+AUTHORITATIVE INSTRUCTION
+
+This file is the single source of truth for this project.
+All design, layout, animation, and implementation decisions MUST follow this document exactly.
+
+LAST UPDATED: March 2026 (8th Semester, Final Year)
+CGPA: 9.07 (as of 7th Semester — most recent official result)
+
+If there is any ambiguity:
+- Do NOT invent new patterns
+- Do NOT add features
+- Do NOT refactor architecture
+- Ask for clarification instead
+
+Silently deviating from this document is considered incorrect behavior.
+
+I understand the rules:
+
+✓ No jumping ahead
+✓ No code generation unless explicitly requested
+✓ Work in clear, numbered phases
+✓ Be concise but precise
+✓ Wait for confirmation between phases
+
+
+PHASE 1 — INFORMATION ARCHITECTURE
+First 10 Seconds Goal
+What the viewer should understand immediately:
+
+Who you are (Backend & Distributed Systems Engineer with ML/AI depth)
+What you specialize in (scalable backend systems, event-driven architectures, ML/GenAI pipelines)
+Your value proposition (building production-grade distributed systems and AI-powered infrastructure)
+One clear call-to-action (availability status or contact)
+Site Map & Section Breakdown
+1. Hero Section
+Purpose: Establish identity and credibility within 3 seconds
+Key Content:
+
+Name + core title ("Backend & Distributed Systems Engineer")
+One-line value proposition focused on scalable systems + AI/ML pipelines
+Current availability status (open to opportunities / working at Juspay)
+Primary CTA (contact or resume download)
+Why it exists: Recruiters decide in seconds whether to keep reading. This anchors their understanding.
+
+2. Technical Expertise
+Purpose: Demonstrate breadth and depth of technical skills
+Key Content:
+
+Backend & Distributed Systems: FastAPI, Kafka, Redis, PostgreSQL, Event-Driven Architecture
+ML & GenAI: Python, LangChain, ChromaDB, LSTMs, Scikit-learn, NLP, RAG pipelines
+Cloud & Infrastructure: AWS, GCP, Docker, Linux, CI/CD
+Systems & Languages: C++, Python, TypeScript, JavaScript, Rust, Haskell
+Observability: Prometheus, Grafana, OpenTelemetry
+Frontend (Supplementary): React, Next.js, HTML5, CSS3
+Why it exists: Recruiters scan for keyword matches. The multi-domain strength (backend + ML + cloud + systems) must be clearly visible and scannable. Frontend is listed last and marked as supplementary — it supports projects but is not the primary skill.
+
+3. Featured Projects (4-5 projects)
+Purpose: Prove competence through real-world application
+Key Content: For each project:
+
+Project name + one-line description
+Problem solved (business/engineering context)
+Technical approach (architecture, stack, key design decisions)
+Impact metrics or outcomes (if available)
+Link to live demo or GitHub (if applicable)
+Why it exists: Showcases not just what you built, but how you think about hard engineering problems. The depth should be visible.
+
+3.5 System Architecture Highlights (FAANG-Differentiator Section)
+Purpose: Visually convey the complexity and design thinking behind your systems
+Key Content: Architecture diagrams or card-based descriptions of:
+
+- Kafka Streaming Pipeline: High-throughput event processing (15k msgs/s) with real-time anomaly detection (Kafka → Redis index → ML detector → DLQ/Replay)
+- RAG Knowledge System: prompt → vector search → LLM pipeline used in Cold Email Generator
+- Multi-Cloud Reconciliation Engine: publishers (AWS/GCP), Kafka topics, Redis index, replay subsystem
+- Anomaly Detection Loop: LSTM + EWMA detector feeding into Kafka for automated recovery
+
+Why it exists: Sets you apart from typical portfolios. Architecture diagrams help both recruiters (big picture) and engineers (details) engage. Even simple card-based descriptions of data flows convey scale and sophistication.
+
+4. Professional Experience
+Purpose: Establish credibility through work history
+Key Content:
+
+Company name, role, duration
+2-3 key achievements per role (metric-driven when possible)
+Technologies used in context
+Why it exists: Recruiters need employment verification. Current Juspay internship is headline-worthy.
+
+5. About / Background
+Purpose: Humanize and provide context
+Key Content:
+
+Brief professional narrative (multi-domain curiosity: systems, ML, web)
+Your approach to software development (depth-first, performance-aware)
+Education: BPIT, 9.07 CGPA (7th Sem), Expected Jun 2026
+Why it exists: After qualifying you technically, this builds connection and trust.
+
+5.5 Problem Solving & Achievements
+Purpose: Quick-hit credibility section for both HR and engineers
+Key Content:
+
+• 800+ problems on LeetCode + GeeksforGeeks
+• Hackathon: 1× winner, 2× finalist
+• Published mini-bitcoin-script on crates.io (Rust package registry)
+• Any relevant certifications/courses
+Why it exists: These are rapid credibility signals. HR loves numbers, engineers respect the DSA depth.
+
+6. Contact / CTA
+Purpose: Make next steps frictionless
+Key Content:
+
+Email (primary): prathammittal355@gmail.com
+LinkedIn, GitHub, LeetCode
+Restate availability
+
+Narrative Flow (Top to Bottom)
+Immediate clarity → You're a backend & distributed systems engineer with AI/ML depth
+Technical credibility → Here's what I know (systems, ML, cloud — multi-domain but deep)
+Applied competence → Here's what I've built (ambitious, production-grade distributed systems)
+System architecture showcase → Here's how I think (FAANG-level design thinking)
+Professional validation → Here's where I've worked (Juspay, EXL, DRDO)
+Human connection → Here's who I am (9.07 CGPA, hacker mindset, curious)
+Easy conversion → Here's how to reach me (low friction)
+
+
+PHASE 2 — VISUAL DESIGN SYSTEM
+Explicit Non-Goals:
+- No excessive animations
+- No parallax-heavy scrolling
+- No autoplay media
+- No visual noise that competes with content
+
+Visual Mood
+Dark, precise, and technically confident. The design should feel like a developer who builds serious systems — not flashy, but unmistakably sharp. Inspired by Linear, Raycast, and Vercel's engineering blog.
+
+Color Strategy
+Default: Dark mode
+Rationale: Aligns with developer culture, reduces eye strain, conveys systems-level sophistication.
+
+Color Tokens
+Background Layers:
+
+bg-primary: #09090b (near-black, main canvas)
+bg-secondary: #111113 (cards, elevated surfaces)
+bg-tertiary: #1c1c1f (hover states, subtle elevation)
+Text:
+
+text-primary: #f4f4f5 (high contrast, body text)
+text-secondary: #a1a1aa (muted, descriptions, metadata)
+text-tertiary: #71717a (de-emphasized, labels, captions)
+
+Light Mode Policy:
+Light mode is an optional secondary theme.
+Dark mode is the canonical design and must be implemented first.
+Light mode is not required for MVP.
+
+Accent Colors:
+Accent Usage Rules:
+- Accent colors must be used sparingly.
+- Never use more than one accent color on a single screen.
+- accent-primary is reserved strictly for primary CTAs, links, and active states.
+- accent-glow is used only for hover, focus, or subtle emphasis.
+- accent-success is used only for availability indicators or success metrics.
+
+Accent Rationale:
+Indigo (#6366f1) was chosen because:
+- It reads uniquely and distinctly "AI/ML/systems"
+- It pairs well with the near-black background without looking corporate
+- It stands out as a differentiator for a builder with ML + systems depth
+
+accent-primary: #6366f1 (indigo — modern, AI-adjacent, trust-inspiring)
+accent-glow: #818cf8 (lighter indigo for hover/focus states)
+accent-success: #22c55e (green, for availability badges or success metrics)
+
+Borders & Dividers:
+
+border-subtle: #27272a (structural dividers)
+border-focus: #6366f1 (interactive element focus rings)
+
+Typography
+Typography Metrics:
+- Heading line-height: 1.1–1.2
+- Body line-height: 1.6–1.7
+- Large headings may use slight negative letter-spacing for visual balance.
+
+Heading Font:
+'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
+
+Rationale: Clean, modern, excellent readability.
+Weights: 600 (semi-bold) for primary headings, 500 (medium) for subheadings
+
+Body Font:
+'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
+
+Weights: 400 (regular) for body, 300 (light) for large descriptive text
+
+Monospace Font:
+'JetBrains Mono', 'Fira Code', 'Monaco', monospace
+
+Rationale: For tech stack tags, code snippets, technical metadata.
+Weight: 400 (regular)
+
+Spacing & Layout Philosophy
+Grid System:
+12-column responsive grid with generous whitespace
+
+Spacing Scale (rem-based):
+
+Micro: 0.25rem, 0.5rem (tight padding, icon gaps)
+Small: 1rem, 1.5rem (component internal spacing)
+Medium: 2rem, 3rem (section padding, card gaps)
+Large: 4rem, 6rem (section dividers, vertical rhythm)
+XL: 8rem, 10rem (hero section breathing room)
+
+Layout Principles:
+
+Generous vertical rhythm — Let sections breathe
+Left-aligned hierarchy — Scannable F-pattern for recruiters
+Maximum content width: 1200px centered
+Mobile-first progression — Stack cleanly at small sizes, expand on desktop
+
+Design Inspirations
+Linear — Minimal navigation, focus on content, subtle gradients
+Vercel — Dark mode execution, typography hierarchy, technical confidence
+Raycast — Clean monospace aesthetics, precision UI
+GitHub Profile Pages — Developer-centric layout, project showcase
+
+Design Principles
+Content is king — Design serves the work, not the other way around
+Subtle motion — Micro-interactions only (hover states, smooth transitions), no distractions
+Scannable hierarchy — Recruiters should find keywords in 30 seconds
+Progressive disclosure — Show enough to intrigue, link to details
+Performance as design — Fast load, no bloat, no unnecessary assets
+
+Performance Constraint:
+Avoid heavy raster images and unnecessary assets.
+Prefer vector graphics, CSS-based effects, and lightweight SVGs.
+Performance is treated as a design feature.
+
+
+PHASE 3 — CONTENT ARCHITECTURE & WIREFRAMES
+
+Section Order (Locked):
+1. Hero
+2. Technical Expertise
+3. Featured Projects
+4. System Architecture Highlights
+5. Professional Experience
+6. About / Achievements
+7. Coding Profiles (GitHub + LeetCode)
+8. Blog (Future / Lorem Ipsum for now)
+9. Contact
+10. Footer
+
+This order is intentional and must not be changed.
+
+1. HERO SECTION
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   [AVAILABILITY BADGE]                        ← static     │
+│                                                             │
+│   Hi, I'm Pratham Mittal                      ← H1         │
+│                                                             │
+│   Backend & Distributed Systems Engineer       ← H2        │
+│   Building scalable distributed systems and               │
+│   AI-powered backend infrastructure                        │
+│                                                             │
+│   I design production-grade software at the                │
+│   intersection of backend engineering and AI               │
+│                                                             │
+│   [View My Work]  [Download Resume]           ← CTAs       │
+│                                                             │
+│   ↓ (subtle scroll indicator)                 ← animated   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+HIERARCHY:
+1. Badge (draws eye first, signals availability)
+2. Name (establishes identity)
+3. Title + specialization (establishes expertise)
+4. Value prop (clarifies what you offer)
+5. CTAs (conversion)
+
+CTA PLACEMENT:
+- Primary: "View My Work" → scrolls to Projects
+- Secondary: "Download Resume (PDF)"
+
+Constraint:
+Hero section must fit entirely within one viewport height on desktop.
+
+2. SKILLS / TECHNICAL EXPERTISE SECTION
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   Technical Expertise                         ← H2         │
+│   ────────────────                           ← subtle line │
+│                                                             │
+│   BACKEND & DISTRIBUTED SYSTEMS               ← Category   │
+│   [FastAPI] [Kafka] [Redis] [PostgreSQL]      ← Tag group  │
+│   [Event-Driven Architecture] [SQLite]                     │
+│                                                             │
+│   ML & GENAI                                               │
+│   [Python] [LangChain] [ChromaDB] [RAG]                    │
+│   [LSTM] [Scikit-learn] [NLP] [LLMs]                       │
+│                                                             │
+│   CLOUD & INFRASTRUCTURE                                   │
+│   [AWS] [GCP] [Docker] [Linux] [CI/CD]                     │
+│                                                             │
+│   LANGUAGES & SYSTEMS                                      │
+│   [C++] [TypeScript] [JavaScript] [Rust]                   │
+│   [Haskell] [Python]                                       │
+│                                                             │
+│   OBSERVABILITY                                            │
+│   [Prometheus] [Grafana] [OpenTelemetry]                   │
+│   [OpenObserve] [Kibana]                                   │
+│                                                             │
+│   FRONTEND                                                 │
+│   [React] [Next.js] [HTML5] [CSS3]                         │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+HIERARCHY:
+1. Section title
+2. Category labels (backend-first, then ML, then infra)
+3. Technology tags (scannable, monospace font)
+
+VISUAL NOTES:
+- Tags are static, styled with borders
+- Backend & Distributed Systems appears first (signals primary strength)
+- ML & GenAI second (signals rare secondary strength)
+- Grouped logically by domain
+- Left-aligned for F-pattern scanning
+- Tags show subtle hover state (border/background change) but must not expand, animate, or reveal tooltips by default.
+
+3. PROJECTS SECTION
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   Featured Projects                           ← H2         │
+│   ────────────────                                         │
+│                                                             │
+│   ┌──────────────────────────────────────────────────┐    │
+│   │                                                   │    │
+│   │  [TAG: icon or category label]   ← static visual  │    │
+│   │                                                   │    │
+│   │  Project Name                   ← H3             │    │
+│   │  One-line description                            │    │
+│   │                                                   │    │
+│   │  PROBLEM                                          │    │
+│   │  Brief context on what problem this solved        │    │
+│   │                                                   │    │
+│   │  SOLUTION                                         │    │
+│   │  Technical approach: architecture, key decisions  │    │
+│   │                                                   │    │
+│   │  TECH STACK                                       │    │
+│   │  [Python] [Kafka] [Redis] [AWS]                  │    │
+│   │                                                   │    │
+│   │  IMPACT (if applicable)                          │    │
+│   │  • Metric 1                                       │    │
+│   │  • Metric 2                                       │    │
+│   │                                                   │    │
+│   │  [View Live →]  [View Code →]    ← links          │    │
+│   │                                                   │    │
+│   └──────────────────────────────────────────────────┘    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+HIERARCHY PER PROJECT:
+1. Category label (signals domain)
+2. Project name
+3. Problem statement (context)
+4. Solution approach (technical depth)
+5. Tech stack tags
+6. Impact metrics (validation)
+7. Links (exploration)
+
+CTA PLACEMENT:
+- Links at bottom of each card
+- "View Live" primary (if available), "View Code" secondary
+Disclosure Rule:
+Project cards show collapsed view by default.
+Collapsed view must show: project name, one-line description, tech stack, primary CTA.
+Expanded view may show: problem, solution, impact.
+
+3.5 SYSTEM ARCHITECTURE HIGHLIGHTS SECTION
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   Systems I've Built                          ← H2         │
+│   ──────────────                             ← subtle line │
+│   Subtitle: "Architecture-level thinking      ← subtext    │
+│   behind my most complex projects"                         │
+│                                                             │
+│   Architecture Cards (3-column grid, 1-col on mobile):     │
+│                                                             │
+│   CARD 1: Kafka Streaming Pipeline                         │
+│   ┌────────────────────────────────────────────┐           │
+│   │  ⚡ Kafka Streaming Pipeline                │           │
+│   │                                             │           │
+│   │  High-throughput event processing           │           │
+│   │  15,000 msgs/s with real-time anomaly       │           │
+│   │  detection and self-healing                 │           │
+│   │                                             │           │
+│   │  FLOW: Kafka → Redis Index → ML Detector    │           │
+│   │        → DLQ / Replay                       │           │
+│   │                                             │           │
+│   │  [View Flow Diagram →]       ← button       │           │
+│   └────────────────────────────────────────────┘           │
+│                                                             │
+│   CARD 2: RAG Knowledge System                             │
+│   ┌────────────────────────────────────────────┐           │
+│   │  🧠 RAG Knowledge System                    │           │
+│   │                                             │           │
+│   │  Retrieval-augmented generation for          │           │
+│   │  personalized cold email automation          │           │
+│   │                                             │           │
+│   │  FLOW: Prompt → Vector Search (ChromaDB)    │           │
+│   │        → LLM Generation → Output            │           │
+│   │                                             │           │
+│   │  [View Flow Diagram →]       ← button       │           │
+│   └────────────────────────────────────────────┘           │
+│                                                             │
+│   CARD 3: Multi-Cloud Reconciliation Engine                │
+│   ┌────────────────────────────────────────────┐           │
+│   │  ☁️  Multi-Cloud Reconciliation              │           │
+│   │                                             │           │
+│   │  99.99% event consistency across             │           │
+│   │  AWS, GCP, and Azure                        │           │
+│   │                                             │           │
+│   │  FLOW: Publishers (AWS/GCP/Azure)           │           │
+│   │        → Kafka Topics → Redis/Bloom Index   │           │
+│   │        → Replay Subsystem                   │           │
+│   │                                             │           │
+│   │  [View Flow Diagram →]       ← button       │           │
+│   └────────────────────────────────────────────┘           │
+│                                                             │
+│   CARD 4: Anomaly Detection Loop                           │
+│   ┌────────────────────────────────────────────┐           │
+│   │  📊 Anomaly Detection Loop                   │           │
+│   │                                             │           │
+│   │  LSTM + EWMA hybrid detection pipeline      │           │
+│   │  feeding Kafka for automated recovery       │           │
+│   │                                             │           │
+│   │  FLOW: Sensor Stream → LSTM + EWMA          │           │
+│   │        → Anomaly Score → Kafka Alert         │           │
+│   │        → Automated Recovery                  │           │
+│   │                                             │           │
+│   │  [View Flow Diagram →]       ← button       │           │
+│   └────────────────────────────────────────────┘           │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+HIERARCHY:
+1. Section title (H2 — "Systems I've Built")
+2. Subtitle (italic, text-secondary)
+3. Architecture cards in 3-column grid (1-col on mobile, 2-col on tablet)
+4. Each card: icon + title + flow description + diagram button
+
+DIAGRAM BUTTON BEHAVIOR:
+- Each card has a [View Flow Diagram →] button
+- Buttons link to Mermaid.js rendered diagrams (to be added later by Pratham)
+- For MVP: buttons show a modal/overlay with placeholder text:
+  "Diagram coming soon — check back for interactive flow visualizations"
+- When diagrams are ready: buttons open a fullscreen overlay with the Mermaid SVG
+
+VISUAL NOTES:
+- Cards have bg-secondary background, border-subtle border
+- Flow descriptions use monospace font (JetBrains Mono)
+- Arrow → characters in flows styled with accent-primary color
+- Cards have subtle hover lift (same as project cards: translateY -4px)
+- Each card has a subtle left-border accent stripe (3px, accent-primary)
+
+ANIMATION:
+Entry Animation (scroll-triggered, 30% in viewport):
+- Section title: Fade in + slide up 15px
+- Architecture cards: Stagger fade-in (200ms delay between cards)
+- Each card slides up 20px, opacity 0 → 1
+- Flow text within cards types in letter-by-letter (optional, Level 3 motion)
+
+Hover:
+- Card: translateY(0 → -4px), border-subtle → accent-primary (20% opacity)
+- Diagram button: background transparent → accent-primary, text → white
+
+4. EXPERIENCE SECTION
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   Professional Experience                     ← H2         │
+│   ────────────────                                         │
+│                                                             │
+│   ┌──────────────────────────────────────────────────┐    │
+│   │                                                   │    │
+│   │  [COMPANY LOGO or INITIAL]      ← small icon     │    │
+│   │                                                   │    │
+│   │  Job Title                      ← H3             │    │
+│   │  Company Name                   ← H4             │    │
+│   │  Month Year – Month Year        ← metadata       │    │
+│   │  Location                                         │    │
+│   │                                                   │    │
+│   │  • Key achievement (metric-driven)                │    │
+│   │  • Second achievement (business impact)           │    │
+│   │  • Third achievement (technical depth)            │    │
+│   │                                                   │    │
+│   │  TECHNOLOGIES USED                                │    │
+│   │  [Tag] [Tag] [Tag]                               │    │
+│   │                                                   │    │
+│   └──────────────────────────────────────────────────┘    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+HIERARCHY PER ROLE:
+1. Company identifier (logo/icon)
+2. Job title
+3. Company name + dates + location
+4. Achievement bullets (metric-driven, action verbs)
+5. Tech stack used
+
+Constraint:
+Each role must fit within one visible card without scrolling.
+Maximum 3 bullet points per role.
+
+5. ABOUT SECTION
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   About Me                                    ← H2         │
+│   ────────────────                                         │
+│                                                             │
+│   ┌─────────────┐  ┌────────────────────────────────┐     │
+│   │             │  │                                 │     │
+│   │  [PROFILE]  │  │  2–3 paragraph professional     │     │
+│   │  [PHOTO]    │  │  narrative                      │     │
+│   │  (optional) │  │                                 │     │
+│   └─────────────┘  │  Education block                │     │
+│                    │  Achievements block              │     │
+│                    └────────────────────────────────┘     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Tone Rule:
+Write in first person.
+Avoid buzzwords and generic claims.
+Highlight curiosity, multi-domain depth, and execution ability.
+
+6. CODING PROFILES SECTION (GitHub + LeetCode)
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   Coding Profiles                             ← H2         │
+│   ──────────────                             ← subtle line │
+│                                                             │
+│   TWO-COLUMN LAYOUT (stacks on mobile):                    │
+│                                                             │
+│   ┌─────────────────────────┐ ┌─────────────────────────┐  │
+│   │                          │ │                          │  │
+│   │  GitHub                  │ │  LeetCode                │  │
+│   │  ───────                 │ │  ─────────               │  │
+│   │                          │ │                          │  │
+│   │  ┌──────────────────┐   │ │  ┌──────────────────┐   │  │
+│   │  │ Stats Card       │   │ │  │ Stats Card       │   │  │
+│   │  │ (dynamic via API)│   │ │  │ (dynamic via API)│   │  │
+│   │  │                  │   │ │  │                  │   │  │
+│   │  │ Repos: 20+       │   │ │  │ Solved: 800+     │   │  │
+│   │  │ Stars: XX        │   │ │  │ Ranking: XX      │   │  │
+│   │  │ Contributions    │   │ │  │ Contest Rating   │   │  │
+│   │  └──────────────────┘   │ │  └──────────────────┘   │  │
+│   │                          │ │                          │  │
+│   │  Featured Repos:         │ │  Problem Distribution:   │  │
+│   │  ┌────────────────┐     │ │  Easy: XXX               │  │
+│   │  │helios-platform │     │ │  Medium: XXX             │  │
+│   │  │Python · Kafka   │     │ │  Hard: XXX               │  │
+│   │  └────────────────┘     │ │                          │  │
+│   │  ┌────────────────┐     │ │  Languages Used:          │  │
+│   │  │mini-bitcoin-   │     │ │  [C++] [Python]           │  │
+│   │  │script · Rust    │     │ │                          │  │
+│   │  └────────────────┘     │ │                          │  │
+│   │                          │ │                          │  │
+│   │  [View GitHub →]         │ │  [View LeetCode →]       │  │
+│   │                          │ │                          │  │
+│   └─────────────────────────┘ └─────────────────────────┘  │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+GitHub Data Source:
+- Fetch from: https://api.github.com/users/itz-Pratham
+- Fallback: static cached JSON if API fails
+
+LeetCode Data Source:
+- Fetch from: LeetCode GraphQL API (https://leetcode.com/graphql)
+- Query: matchedUser(username: "itz_Pratham") → submitStats, profile
+- Fallback: static cached JSON with known stats (800+ solved)
+
+Featured repos (manually curated):
+1. helios-platform — Multi-cloud event reconciliation engine
+2. mini-bitcoin-script — Bitcoin Script engine in Rust (published on crates.io)
+3. VAE-Based-Multimodal-Anomaly-Detection-System — Unsupervised ML anomaly detection
+4. Cold_Email_Generator — LLM-powered app (live on Streamlit)
+
+7. CONTACT SECTION
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   Let's Build Something                       ← H2         │
+│   ────────────────                                         │
+│                                                             │
+│   I'm currently open to full-time roles and                │
+│   internship opportunities.                                │
+│                                                             │
+│   ┌──────────────────────────────────────────────────┐    │
+│   │  EMAIL                                            │    │
+│   │  prathammittal355@gmail.com       ← clickable     │    │
+│   │                                                   │    │
+│   │  LINKEDIN                                         │    │
+│   │  linkedin.com/in/pratham-mittal-4b59a725a         │    │
+│   │                                                   │    │
+│   │  GITHUB                                           │    │
+│   │  github.com/itz-Pratham          ← clickable     │    │
+│   │                                                   │    │
+│   │  LEETCODE                                         │    │
+│   │  leetcode.com/u/itz_Pratham      ← clickable     │    │
+│   │                                                   │    │
+│   └──────────────────────────────────────────────────┘    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+HIERARCHY:
+1. Section title (inviting)
+2. Availability restatement
+3. Contact methods (email primary)
+
+Conversion Rule:
+Email is always the primary contact method.
+All other links are secondary and visually de-emphasized.
+
+8. BLOG SECTION (P3 / Future — Lorem Ipsum for MVP)
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   Technical Writing                           ← H2         │
+│   ─────────────────                          ← subtle line │
+│                                                             │
+│   Thoughts on distributed systems,                         │
+│   ML engineering, and building software.      ← subtext    │
+│                                                             │
+│   ┌──────────────────────────────────────────────────┐    │
+│   │                                                   │    │
+│   │  📝 Lorem ipsum dolor sit amet                    │    │
+│   │  consectetur adipiscing elit                      │    │
+│   │  March 2026 · 5 min read                         │    │
+│   │                                                   │    │
+│   │  Lorem ipsum dolor sit amet, consectetur          │    │
+│   │  adipiscing elit. Sed do eiusmod tempor            │    │
+│   │  incididunt ut labore et dolore magna aliqua...   │    │
+│   │                                                   │    │
+│   │  [Read More →]                                    │    │
+│   │                                                   │    │
+│   └──────────────────────────────────────────────────┘    │
+│                                                             │
+│   ┌──────────────────────────────────────────────────┐    │
+│   │                                                   │    │
+│   │  📝 Ut enim ad minim veniam                       │    │
+│   │  quis nostrud exercitation                        │    │
+│   │  February 2026 · 8 min read                      │    │
+│   │                                                   │    │
+│   │  Duis aute irure dolor in reprehenderit in       │    │
+│   │  voluptate velit esse cillum dolore eu fugiat...  │    │
+│   │                                                   │    │
+│   │  [Read More →]                                    │    │
+│   │                                                   │    │
+│   └──────────────────────────────────────────────────┘    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+BLOG NOTES:
+- This section uses lorem ipsum placeholder content for MVP.
+- Pratham will replace with real blog posts over time.
+- Blog post data stored in src/data/blog.json
+- Each post: { title, date, readTime, excerpt, slug, tags }
+- Cards link to /blog/[slug] (future route, for MVP shows "Coming Soon")
+- Maximum 3 posts shown, with [View All Posts →] CTA if more exist
+
+9. FOOTER
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│  Pratham Mittal     [Email] [LinkedIn] [GitHub] [LeetCode] │
+│  Backend & Distributed Systems Engineer                     │
+│                                                             │
+│  © 2026 • Built with Next.js, TypeScript, Framer Motion    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+WIREFRAME SUMMARY
+Visual Hierarchy Pattern (All Sections):
+
+Section title (H2, left-aligned)
+Divider or spacing
+Content (left-aligned blocks)
+CTAs (when applicable, beneath content)
+
+Static vs Dynamic Elements:
+
+Static: All text, images, tags, most CTAs
+Dynamic: Hover states, GitHub stats (API-driven), LeetCode stats (API-driven), scroll indicators
+
+Mobile Considerations:
+
+All sections stack vertically
+Cards go single-column
+CTAs remain full-width and prominent
+Touch-friendly spacing (minimum 44px tap targets)
+
+Global Wireframe Rules:
+- Left-aligned content throughout
+- Maximum readable line width (~65–75 characters)
+- No section should feel visually dense
+- Whitespace is intentional and must be preserved
+
+
+PHASE 4 — INTERACTIONS & ANIMATIONS (DESIGN LEVEL)
+Explicit Motion Non-Goals:
+- No page transition animations
+- No cursor-following effects
+- No scroll-jacking
+- No background video or animated noise
+- No continuous animations outside subtle availability indicators
+
+Animation Philosophy
+Guiding Principle: Motion should provide feedback, guidance, and delight—never decoration.
+Motion Severity Levels:
+- Level 0: No motion (when prefers-reduced-motion is enabled)
+- Level 1: Micro-interactions only (hover, focus, feedback)
+- Level 2: Entry animations (fade + slide only)
+- Level 3: Expand/collapse interactions (projects, accordions)
+
+This portfolio must not exceed Level 3 motion at any point.
+
+Performance Constraints:
+
+Total page weight budget: <500KB initial load
+Animations must run at 60fps on mid-range devices
+Use CSS transforms (translate, scale, opacity) over layout-affecting properties
+Avoid animating width, height, top, left
+
+Section-by-Section Motion Design
+
+Scroll Trigger Rule:
+Scroll-triggered animations run only once per page load.
+Animations must not replay when scrolling back up.
+
+1. HERO SECTION
+Entry Animation (on page load):
+
+Availability badge: Fade in + subtle scale (0.95 → 1.0) — 0.4s delay
+Name (H1): Fade in + slide up 20px — 0.2s delay
+Title + value prop: Fade in + slide up 15px — 0.3s delay
+CTAs: Fade in + slide up 10px — 0.5s delay
+Scroll indicator: Fade in — 0.8s delay, then gentle bounce loop (2s interval)
+
+Timing: Stagger by 100ms between elements for natural rhythm
+
+Hover Interactions:
+
+Primary CTA button:
+Scale: 1.0 → 1.02
+Box shadow expands slightly
+Background: accent-primary → accent-glow
+Transition: 0.2s ease-out
+
+Secondary link:
+Underline slides in from left
+Color: text-secondary → text-primary
+Transition: 0.15s ease
+
+Micro-interactions:
+Availability badge pulses gently if status is "Available" (scale 1.0 → 1.05, 3s loop)
+
+2. TECHNICAL EXPERTISE SECTION
+Entry Animation (scroll-triggered, 20% in viewport):
+
+Section title: Fade in + slide up 15px
+Tech tags: Stagger fade-in by category (50ms delay between tags)
+Each tag slides up 10px as it fades in
+Backend category animates first, then ML, then Cloud, etc.
+
+Hover Interactions:
+
+Tech tags:
+Border: border-subtle → accent-primary
+Background: transparent → bg-tertiary
+Subtle glow (box-shadow with accent at 20% opacity)
+Transition: 0.15s ease
+
+3. PROJECTS SECTION
+Entry Animation (scroll-triggered, 30% in viewport):
+
+Section title: Fade in + slide up 15px
+Project cards: Stagger fade-in (150ms delay between cards)
+Each card slides up 20px as it fades in, opacity 0 → 1
+
+Hover Interactions:
+
+Project card (entire container):
+Lift: translateY(0 → -8px)
+Border: border-subtle → border-focus (accent glow)
+Box shadow expands (soft glow)
+Transition: 0.25s ease-out
+
+Expandable cards:
+Expand: height auto-animates (0.3s ease-in-out)
+Chevron rotates 90° when expanded
+
+4. EXPERIENCE SECTION
+Entry Animation (scroll-triggered, 25% in viewport):
+
+Section title: Fade in + slide up 15px
+Cards: Stagger fade-in (120ms delay between roles)
+
+Hover Interactions:
+
+Experience card:
+Border brightens: border-subtle → accent-primary (10% opacity)
+Background: bg-secondary → bg-tertiary
+Transition: 0.2s ease
+
+5. ABOUT SECTION
+Entry Animation (scroll-triggered, 30% in viewport):
+
+Section title: Fade in + slide up 15px
+Profile photo: Fade in + scale 0.95 → 1.0, 0.1s delay
+Text paragraphs: Fade in + slide up 10px, 0.2s delay
+
+6. CODING PROFILES SECTION
+Entry Animation (scroll-triggered, 30% in viewport):
+
+GitHub stats card: Fade in + slide up 20px
+LeetCode stats card: Fade in + slide up 20px (100ms delay after GitHub)
+Repo cards: Stagger fade-in (100ms delay each)
+Problem distribution: Fade in + count-up animation for numbers
+
+7. CONTACT SECTION
+Entry Animation (scroll-triggered, 25% in viewport):
+
+Section title: Fade in + slide up 15px
+Contact links: Stagger fade-in (100ms per link), each slides up 10px
+
+Hover Interactions:
+
+Contact links: translateX(0 → 4px) + color: text-secondary → accent-primary
+Email click: Brief checkmark success state (1s)
+
+Global Scroll Behavior
+All anchor links use smooth scroll (0.8–1.2s ease-in-out)
+Scroll indicator fades out after user scrolls past 100px
+
+Animation Performance Checklist
+✓ All animations use transform and opacity only
+✓ No layout-triggering properties (width, height, top, left)
+✓ Use will-change hint for elements that will animate
+✓ Reduce motion if prefers-reduced-motion enabled
+✓ No animations block page rendering
+
+Accessibility Considerations
+If prefers-reduced-motion is enabled:
+- Disable all entry and scroll-triggered animations
+- Keep only hover and focus feedback
+- Maintain layout without motion
+
+Focus States:
+All interactive elements have visible focus rings
+Color: accent-primary with 2px offset
+Never remove :focus-visible styles
+
+Timing Reference
+Element Type    Duration    Easing
+Fade in         0.3–0.4s    ease-out
+Slide up        0.3–0.5s    ease-out
+Hover lift      0.2–0.25s   ease-out
+Button hover    0.15–0.2s   ease
+Expand/collapse 0.3s        ease-in-out
+Smooth scroll   0.8–1.2s    ease-in-out
+
+Stagger Delays:
+Small elements (tags): 50–80ms
+Medium elements (cards): 100–150ms
+Sections: 200–300ms
+
+
+PHASE 5 — FUNCTIONALITY & FEATURES
+
+Feature Priority Levels:
+
+P0 (Must Have): Core navigation, contact methods, content display, resume download
+P1 (Should Have): Smooth scrolling, GitHub integration, SEO, analytics
+P2 (Nice to Have): Dark/light toggle, command palette (Cmd+K)
+P3 (Future): Contact form, newsletter, blog
+
+Resume Download:
+File: /public/resume.pdf (Pratham_Mittal_Resume.pdf)
+Trigger: Hero CTA, footer link, command palette
+Opens in new tab, also downloadable
+Priority: P0
+
+Smooth Scrolling:
+All in-page navigation triggers smooth scroll
+Duration: 0.8–1.2s ease-in-out
+Offset 80px for sticky header
+Priority: P1
+
+GitHub Integration:
+Fetch from: https://api.github.com/users/itz-Pratham
+Featured repos (manually curated): helios-platform, mini-bitcoin-script, VAE-Based-Multimodal-Anomaly-Detection-System, Cold_Email_Generator
+Fallback: static cached JSON if API fails
+Priority: P1
+
+LeetCode Integration:
+Fetch from: LeetCode GraphQL API (https://leetcode.com/graphql)
+Query: matchedUser(username: "itz_Pratham") { submitStats, profile, contestRanking }
+Data to display: total solved, easy/medium/hard breakdown, contest rating (if available)
+Fallback: static cached JSON with known stats (800+ solved)
+Priority: P1
+
+Analytics:
+Google Analytics 4 for: page views, resume downloads, social link clicks
+Privacy: respect DNT, no PII
+Priority: P1
+
+SEO:
+Open Graph tags, structured data (JSON-LD)
+Page title: "Pratham Mittal — Backend & Distributed Systems Engineer"
+Meta description: ~155 chars summarizing distributed systems + ML/AI + backend engineering
+Priority: P1
+
+Dark/Light Toggle:
+Default: dark mode
+Keyboard shortcut: Cmd/Ctrl + Shift + L
+Persist in localStorage
+Priority: P2
+
+Command Palette (Cmd+K):
+Quick actions: Download Resume, Copy Email, View GitHub, Jump to section, Toggle Mode
+Lazy-loaded (~5KB)
+Priority: P2
+
+MVP Feature Set (P0 + P1):
+Resume download, smooth scrolling, GitHub integration, analytics, SEO
+
+
+PHASE 6 — TECH IMPLEMENTATION PLAN
+
+Framework: Next.js 14+ (App Router, static export mode)
+Language: TypeScript (strict mode)
+Styling: Vanilla CSS + CSS Modules
+Animations: Framer Motion + CSS transitions
+State: React hooks (useState, useEffect) + sessionStorage
+Deployment: Vercel (zero-config, CDN, preview deploys)
+
+Folder Structure (High-Level):
+portfolio/
+│
+├── public/
+│   ├── resume.pdf                 # Pratham_Mittal_Resume.pdf
+│   ├── images/                    # Project thumbnails, profile photo
+│   └── favicon/
+│
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx             # Root layout, metadata, fonts
+│   │   ├── page.tsx               # Main portfolio page
+│   │   └── globals.css
+│   │
+│   ├── components/
+│   │   ├── Hero/
+│   │   ├── TechStack/
+│   │   ├── Projects/
+│   │   ├── SystemArchitecture/
+│   │   ├── Experience/
+│   │   ├── About/
+│   │   ├── CodingProfiles/       # GitHub + LeetCode stats
+│   │   ├── Blog/
+│   │   ├── Contact/
+│   │   ├── Footer/
+│   │   └── shared/
+│   │       ├── Button/
+│   │       ├── Tag/
+│   │       └── SectionTitle/
+│   │
+│   ├── lib/
+│   │   ├── github.ts              # GitHub API integration
+│   │   ├── leetcode.ts            # LeetCode GraphQL API integration
+│   │   ├── analytics.ts           # Analytics wrapper
+│   │   └── constants.ts           # Config: resume path, links, username
+│   │
+│   ├── data/
+│   │   ├── projects.json          # Project details (from Phase 7)
+│   │   ├── experience.json        # Work history (from Phase 7)
+│   │   ├── skills.json            # Tech stack (from Phase 7)
+│   │   ├── blog.json              # Blog posts (lorem ipsum for MVP)
+│   │   ├── github-fallback.json   # Cached GitHub data
+│   │   └── leetcode-fallback.json # Cached LeetCode data
+│   │
+│   ├── styles/
+│   │   ├── variables.css          # CSS Custom Properties (color tokens)
+│   │   └── animations.css         # Reusable keyframes
+│   │
+│   └── types/
+│       └── index.ts               # Project, Experience, Skill types
+│
+├── .env.local
+├── next.config.js
+├── package.json
+├── tsconfig.json
+└── README.md
+
+CSS Custom Properties (Variables):
+:root {
+  --bg-primary: #09090b;
+  --bg-secondary: #111113;
+  --bg-tertiary: #1c1c1f;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #71717a;
+  --accent-primary: #6366f1;
+  --accent-glow: #818cf8;
+  --accent-success: #22c55e;
+  --border-subtle: #27272a;
+  --border-focus: #6366f1;
+}
+
+State Management: React hooks + sessionStorage only. No Redux, Zustand, or Jotai.
+
+TypeScript Interfaces:
+interface Project {
+  id: string;
+  name: string;
+  category: string; // 'Distributed Systems' | 'ML & GenAI' | 'Full-Stack' | 'Systems'
+  description: string;
+  problem: string;
+  solution: string;
+  techStack: string[];
+  metrics?: string[];
+  links: { demo?: string; code?: string; };
+}
+
+interface Experience {
+  id: string;
+  company: string;
+  role: string;
+  duration: string;
+  location: string;
+  achievements: string[];
+  technologies: string[];
+}
+
+interface Skill {
+  category: string;
+  tags: string[];
+}
+
+Build & Deployment:
+next build generates static export
+Deploy to Vercel via GitHub push to main
+Custom domain (optional): pratham.dev or prathammittal.dev
+
+Performance Budget:
+Initial JS bundle: < 150KB gzipped
+Images: < 200KB per asset
+FCP: < 1.2s, TTI: < 2.5s, Lighthouse Performance > 95
+
+Implementation Order (MANDATORY):
+Code must be generated in this order:
+1. Project setup & configuration (Next.js, TypeScript, eslint)
+2. Global styles & CSS tokens (variables.css, globals.css)
+3. Layout shell (root layout, nav placeholder, metadata)
+4. Hero section (static, no animations)
+5. Technical Expertise section
+6. Projects section (with static data)
+7. System Architecture Highlights section
+8. Experience section
+9. About / Achievements section
+10. Coding Profiles section (GitHub + LeetCode)
+11. Blog section (lorem ipsum)
+12. Contact section
+13. Footer
+14. Animations (Phase 4 rules only — Framer Motion)
+15. GitHub + LeetCode API integration (with fallbacks)
+16. Performance optimizations (lazy load, code split)
+17. SEO & metadata (Open Graph, JSON-LD)
+18. Analytics (GA4)
+
+Do not skip ahead or bundle multiple sections together.
+
+
+✅ PHASE 7 — FINAL CONTENT COPY
+(Backend & Distributed Systems Engineer Portfolio — Locked)
+
+🟦 HERO SECTION
+Name
+
+Pratham Mittal
+
+Title
+
+Backend & Distributed Systems Engineer
+
+Headline (H2)
+
+Building scalable distributed systems and AI-powered backend infrastructure
+
+Value Proposition (Subheadline)
+
+I design and build production-grade software that handles real complexity — from multi-cloud event reconciliation engines processing 1M+ daily events to LLM-powered automation tools. Backend systems, ML pipelines, and cloud infrastructure.
+
+Availability Badge
+
+✓ Open to opportunities · Final Year (8th Sem) @ BPIT Delhi
+
+Primary CTA
+
+View My Work
+
+Secondary CTA
+
+Download Resume (PDF)
+
+Scroll Indicator
+
+↓
+
+🟦 ABOUT SECTION
+Heading
+
+About Me
+
+Body Copy
+
+I'm a software engineer with a deep interest in building systems that actually work at scale — from distributed event pipelines handling millions of messages per day, to ML models that detect anomalies in real-time sensor streams.
+
+I started with competitive programming (800+ problems on LeetCode + GFG), moved into ML and GenAI, and then found my passion at the intersection: building intelligent, reliable backend systems. My most interesting work lives where engineering depth meets applied AI.
+
+Currently interning at Juspay, where I'm building on the Breeze/1CCO platform used by tens of thousands of daily users. Before that, I interned at DRDO's Scientific Analysis Group, working on ML model evaluation and optimization.
+
+I care about understanding how things work under the hood — that's why I've written a Bitcoin Script interpreter in Rust, built a multi-cloud reconciliation engine, and explored VAE-based anomaly detection. I'm drawn to hard problems and I like shipping.
+
+Currently based in New Delhi, India. Final year, 8th semester. Expected graduation: June 2026.
+
+Education Block
+
+Bachelor of Technology — Computer Science Engineering
+Bhagwan Parshuram Institute of Technology, New Delhi
+CGPA: 9.07 (7th Sem) • Expected Graduation: June 2026
+
+Achievements Block
+
+• Solved 800+ problems on LeetCode and GeeksforGeeks
+• Hackathon top prize (1x winner, 2x finalist)
+• Published mini-bitcoin-script on crates.io (Rust package registry)
+
+🟦 TECHNICAL EXPERTISE
+
+Backend & Distributed Systems
+FastAPI · Kafka · Redis · PostgreSQL · SQLite · Event-Driven Architecture
+REST APIs · Webhooks · Bloom Filters · Consistent Hashing
+
+ML & GenAI
+Python · LangChain · ChromaDB · RAG Pipelines · LSTMs
+Scikit-learn · NLP · LLMs · Streamlit
+
+Cloud & Infrastructure
+AWS · GCP · Docker · Linux · CI/CD · Nginx · Webhooks
+
+Languages & Systems
+C++ · Python · TypeScript · JavaScript · Rust · Haskell
+
+Observability
+Prometheus · Grafana · OpenTelemetry · OpenObserve · Kibana
+
+Frontend
+React · Next.js · TypeScript · HTML5 · CSS3 · Responsive Design
+
+🟦 FEATURED PROJECTS
+
+🔹 HELIOS — Multi-Cloud Event Reconciliation Platform
+Category: Distributed Systems
+
+Problem
+Modern multi-cloud architectures create event consistency nightmares. Events across AWS, GCP, and Azure can be lost, duplicated, or arrive out-of-order — causing silent data corruption at scale.
+
+Solution
+Designed and built a multi-cloud reconciliation engine that guarantees 99.99% event consistency using an O(1) Redis/Bloom-filter deduplication index and consistent hashing for distribution across 1M+ daily events. Added a MAPE-K self-healing loop with a TOPSIS decision engine for automated recovery.
+
+Technical Highlights
+
+• O(1) Redis/Bloom-filter index (<1ms lookups, 0.01% false positive rate)
+• MAPE-K self-healing loop with TOPSIS decision engine
+• LSTM + EWMA hybrid anomaly detection pipeline (95%+ accuracy)
+• Processes 15,000 msg/s Kafka streams in real-time
+
+Impact
+
+• 99.99% event consistency across 3 cloud providers
+• MTTR reduced from hours to <30 seconds via intelligent replay
+• 90%+ automated recovery without human intervention
+
+Tech Stack
+Python · Kafka · Redis · AWS · GCP · Azure · LSTM
+
+Links
+View Code → GitHub
+
+🔹 Cold Email Generator
+Category: ML & GenAI
+
+Problem
+Personalizing cold emails for job applications at scale is time-consuming. Generic emails have low conversion rates. Candidates need a way to auto-personalize based on specific job descriptions and their own project history.
+
+Solution
+Built an LLM-powered Streamlit app that reads a job description, retrieves relevant projects from a ChromaDB vector store, and generates a tailored cold email via LangChain — cutting manual effort by ~80%.
+
+Technical Highlights
+
+• ChromaDB vector store for semantic project-JD matching
+• LangChain pipeline for structured LLM output
+• CSV upload for bulk job processing
+• Interactive toggles for personalization control
+
+Impact
+
+• ~80% reduction in manual email writing time
+• ~50% improvement in customization speed and usability
+• Live and deployed on Streamlit
+
+Tech Stack
+Python · LangChain · ChromaDB · Streamlit · LLMs
+
+Links
+View Live Demo → Streamlit app
+View Code → GitHub
+
+🔹 mini-bitcoin-script
+Category: Systems / Rust
+
+Problem
+Understanding Bitcoin's scripting language requires either reading dense spec documents or using heavyweight implementations. No lightweight, educational yet functional engine existed in Rust.
+
+Solution
+Built a minimal Bitcoin Script parsing and execution engine in Rust, published as a crate on crates.io. Implements the full Script opcode set including cryptographic operations.
+
+Technical Highlights
+
+• Full Bitcoin Script opcode parsing and execution
+• Published on crates.io (Rust public package registry)
+• Clean, zero-dependency Rust implementation
+
+Tech Stack
+Rust
+
+Links
+View Code → GitHub
+Package → crates.io
+
+🔹 VAE-Based Multimodal Anomaly Detection System
+Category: ML / Deep Learning
+
+Problem
+Industrial failures from unexpected sensor deviations are costly and hard to predict. Traditional threshold-based monitoring fails to capture subtle, multi-sensor correlated anomalies.
+
+Solution
+Designed an unsupervised anomaly detection system using Variational Autoencoders (VAE) trained on multimodal sensor data. The model learns normal behavior distributions and flags statistical deviations.
+
+Technical Highlights
+
+• VAE architecture for unsupervised anomaly scoring
+• Multimodal input pipeline (multiple sensor streams)
+• Reconstruction error as anomaly signal
+• Configurable threshold tuning
+
+Tech Stack
+Python · PyTorch · Scikit-learn · Jupyter Notebooks
+
+Links
+View Code → GitHub
+
+🟦 PROFESSIONAL EXPERIENCE
+
+Product Engineer Intern
+Juspay
+July 2025 – Present
+Bengaluru, India
+
+• Implemented OTP auto-read and SafeMode-compliant authentication flows for the Breeze/1CCO platform, improving authentication success rates across 10k+ daily users.
+• Contributed to the open-source Clairvoyance project by developing MCP tools, improving automation accuracy and speeding up merchant debugging workflows.
+• Enhanced platform reliability by diagnosing Kafka consumer lag, rebalancing issues, and Lighthouse failures using OpenObserve & Kibana, reducing repeated incidents and cutting debug time.
+
+Technologies Used
+React · TypeScript · Kafka · OpenObserve · Kibana · MCP
+
+GenAI Intern
+EXL Services
+Jun 2025 – Jul 2025
+Noida, India (Hybrid)
+
+• Developed end-to-end GenAI/LLM pipelines for enterprise automation, building RAG (Retrieval-Augmented Generation) flows using LangChain and ChromaDB integrated with internal APIs.
+• Optimized prompt-engineering workflows, improving response relevance and reducing hallucinations in knowledge retrieval tasks.
+
+Technologies Used
+Python · LangChain · ChromaDB · OpenAI API · RAG · Prompt Engineering
+
+Machine Learning Intern
+Scientific Analysis Group, DRDO
+July 2024 – Aug 2024
+New Delhi, India
+
+• Analyzed and compared regression and classification algorithms (Linear Regression, Logistic Regression, Naïve Bayes, KNN) to determine optimal models for structured datasets.
+• Applied statistical validation techniques (precision, recall, classification reports) to ensure data-driven algorithm selection.
+• Optimized models with GridSearchCV hyperparameter tuning, achieving >90% accuracy with Logistic Regression.
+
+Technologies Used
+Python · Scikit-learn · GridSearchCV · Jupyter Notebooks
+
+🟦 CODING PROFILES
+
+Section Heading
+
+Coding Profiles
+
+GITHUB COLUMN:
+
+Subheading: Open Source & Contributions
+
+Body Copy:
+I build in the open. My repos range from production-grade distributed systems to published Rust crates — with ML notebooks and full-stack apps in between.
+
+Featured Repositories:
+1. itz-Pratham/helios-platform — Multi-cloud event reconciliation engine (Python, Kafka, Redis)
+2. itz-Pratham/mini-bitcoin-script — Bitcoin Script engine in Rust (published on crates.io)
+3. itz-Pratham/VAE-Based-Multimodal-Anomaly-Detection-System — Unsupervised anomaly detection (Python, PyTorch)
+4. itz-Pratham/Cold_Email_Generator — LLM-powered cold email app (Python, LangChain, Streamlit)
+
+CTA: View GitHub Profile →
+Link: https://github.com/itz-Pratham
+
+LEETCODE COLUMN:
+
+Subheading: Problem Solving
+
+Body Copy:
+800+ problems solved across LeetCode and GeeksforGeeks — strong foundations in algorithms, data structures, and system design thinking.
+
+Stats to display (fetched via API):
+- Total Problems Solved
+- Easy / Medium / Hard breakdown
+- Contest Rating (if available)
+- Acceptance Rate
+- Primary Languages: C++, Python
+
+CTA: View LeetCode Profile →
+Link: https://leetcode.com/u/itz_Pratham/
+
+🟦 BLOG (P3 — Lorem Ipsum for MVP)
+
+Section Heading
+
+Technical Writing
+
+Subheading
+
+Thoughts on distributed systems, ML engineering, and building software.
+
+Blog Post 1 (Lorem Ipsum):
+Title: Lorem ipsum dolor sit amet consectetur
+Date: March 2026
+Read Time: 5 min read
+Excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Tags: [Distributed Systems] [Kafka]
+
+Blog Post 2 (Lorem Ipsum):
+Title: Ut enim ad minim veniam quis nostrud
+Date: February 2026
+Read Time: 8 min read
+Excerpt: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Tags: [ML Engineering] [RAG]
+
+NOTE: Replace lorem ipsum with real posts when ready. Blog data lives in src/data/blog.json.
+
+🟦 CONTACT
+
+Heading
+
+Let's Build Something
+
+Subheading
+
+I'm currently open to full-time roles, internships, and contract work — especially in backend systems, ML infrastructure, or full-stack engineering.
+
+EMAIL
+prathammittal355@gmail.com
+
+LINKEDIN
+linkedin.com/in/pratham-mittal-4b59a725a
+
+GITHUB
+github.com/itz-Pratham
+
+LEETCODE
+leetcode.com/u/itz_Pratham
+
+🟦 FOOTER
+
+© 2026 Pratham Mittal • Backend & Distributed Systems Engineer
+Built with Next.js, TypeScript, and Framer Motion
+
+🧠 GENERAL COPY RULES (LOCKED)
+
+Use metrics whenever available
+
+Start bullets with action verbs
+
+Be specific about technologies
+
+Show impact, not responsibilities
+
+Avoid buzzwords and hype
+
+Keep sentences concise and scannable
+
+First person voice throughout
+
+No self-praise — let the work speak
+
+🔗 IMPORTANT LINKS (LOCKED)
+GitHub:    https://github.com/itz-Pratham
+LinkedIn:  https://www.linkedin.com/in/pratham-mittal-4b59a725a/
+LeetCode:  https://leetcode.com/u/itz_Pratham/
+Email:     prathammittal355@gmail.com
+Phone:     +918595537057
+
+IMPLEMENTATION ORDER (MANDATORY)
+
+Code must be generated in this order:
+1.  Project setup & configuration
+2.  Global styles & CSS tokens
+3.  Layout shell
+4.  Hero section
+5.  Technical Expertise section
+6.  Projects section
+7.  System Architecture Highlights section
+8.  Experience section
+9.  About / Achievements section
+10. Coding Profiles section (GitHub + LeetCode)
+11. Blog section (lorem ipsum)
+12. Contact section
+13. Footer
+14. Animations (Phase 4 rules only)
+15. GitHub + LeetCode API integration
+16. Performance optimizations
+17. SEO & metadata
+18. Analytics
+
+Do not skip ahead or bundle multiple sections together.
