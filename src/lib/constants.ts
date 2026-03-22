@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
     availability: 'Open to opportunities',
     email: 'prathammittal355@gmail.com',
     phone: '+918595537057',
-    resumePath: '/resume.pdf',
+    resumePath: 'https://drive.google.com/file/d/1MUaKex87R_pbTqdRIeJlmtCHSuwxtRyF/view?usp=sharing',
 } as const;
 
 export const SOCIAL_LINKS = {
