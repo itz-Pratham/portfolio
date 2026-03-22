@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
+import StarryCanvas from '../components/shared/StarryCanvas';
 
 export const metadata: Metadata = {
   title: 'Pratham Mittal — Backend & Distributed Systems Engineer',
@@ -49,7 +50,10 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>{children}</body>
+      <body>
+        <StarryCanvas />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,79 +1,211 @@
 .section {
-    padding: var(--space-5xl) 0;
-    background: var(--bg-secondary);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: var(--space-4xl) 0 var(--space-xl) 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, transparent, rgba(99, 102, 241, 0.05));
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.container {
+/* =========================================
+   About Me Embedded Block 
+   ========================================= */
+
+.aboutContainer {
+    max-width: var(--max-width);
+    margin: 0 auto var(--space-5xl) auto;
+    padding: 0 var(--space-xl);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-4xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: var(--space-4xl);
+}
+
+.aboutTitle {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--accent-glow);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-lg);
+}
+
+.bioCol {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.paragraph {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.eduCol {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+    padding-top: calc(var(--space-lg) + 1rem);
+    /* visually align with text */
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.blockLabel {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+}
+
+.blockTitle {
+    font-size: 1.1rem;
+    font-weight: var(--fw-semibold);
+    color: var(--text-primary);
+}
+
+.blockMeta {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.achievementsList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.achievementItem {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    padding-left: var(--space-md);
+    position: relative;
+}
+
+.achievementItem::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-family: var(--font-mono);
+}
+
+/* =========================================
+   Massive Let's Talk CTA 
+   ========================================= */
+
+.contactContainer {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 var(--space-xl);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
-.heading {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: var(--fw-semibold);
-    letter-spacing: -0.02em;
+.leftCol {
+    flex: 1;
+}
+
+.massiveText {
+    font-size: clamp(5rem, 15vw, 12rem);
+    font-weight: 800;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
     color: var(--text-primary);
-    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    text-shadow: 0 0 100px rgba(99, 102, 241, 0.15);
+    /* Soft ambient glow */
 }
 
-.subheading {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    max-width: 50ch;
-    line-height: 1.6;
-    margin-bottom: var(--space-2xl);
-}
-
-.links {
+.rightCol {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: var(--space-md);
-    width: 100%;
-    max-width: 400px;
+    padding-bottom: var(--space-md);
 }
 
 .linkItem {
+    font-family: var(--font-mono);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--text-secondary);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: var(--fw-medium);
+    transition: color var(--transition-base), transform var(--transition-base);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 16px 24px;
-    background: var(--bg-primary);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--border-radius-md);
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: all var(--transition-fast);
+    gap: var(--space-xs);
 }
 
 .linkItem:hover {
-    border-color: var(--accent-primary);
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
-    transform: translateY(-2px);
+    color: var(--accent-glow);
+    transform: translateX(-15px);
 }
 
-.linkLabel {
+.arrow {
+    font-family: var(--font-body);
+    font-weight: normal;
+    transition: transform var(--transition-base);
+}
+
+.linkItem:hover .arrow {
+    transform: translate(2px, -2px) scale(1.1);
+}
+
+.subFooter {
+    max-width: var(--max-width);
+    margin: var(--space-4xl) auto 0;
+    padding: 0 var(--space-xl);
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
     font-family: var(--font-mono);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
 }
 
-.linkValue {
-    font-weight: var(--fw-medium);
-}
+/* =========================================
+   Responsive Breakpoints 
+   ========================================= */
 
-.icon {
-    margin-left: var(--space-sm);
-    transition: transform var(--transition-fast);
-}
+@media (max-width: 900px) {
+    .aboutContainer {
+        grid-template-columns: 1fr;
+        gap: var(--space-3xl);
+        padding-top: var(--space-xl);
+    }
 
-.linkItem:hover .icon {
-    transform: translateX(4px) translateY(-4px);
-    color: var(--accent-primary);
+    .eduCol {
+        padding-top: 0;
+    }
+
+    .contactContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4xl);
+    }
+
+    .rightCol {
+        align-items: flex-start;
+        width: 100%;
+        gap: var(--space-lg);
+    }
+
+    .linkItem:hover {
+        transform: translateX(15px);
+    }
 }

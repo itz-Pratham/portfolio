@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
     tagline: 'Building scalable distributed systems and AI-powered backend infrastructure',
     valueProp:
         'I design and build production-grade software that handles real complexity — from multi-cloud event reconciliation engines processing 1M+ daily events to LLM-powered automation tools.',
-    availability: 'Open to opportunities · Final Year (8th Sem) @ BPIT Delhi',
+    availability: 'Open to opportunities',
     email: 'prathammittal355@gmail.com',
     phone: '+918595537057',
     resumePath: '/resume.pdf',

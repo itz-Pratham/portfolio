@@ -3,11 +3,9 @@ import TechStack from '@/components/TechStack';
 import Projects from '@/components/Projects';
 import SystemArchitecture from '@/components/SystemArchitecture';
 import Experience from '@/components/Experience';
-import About from '@/components/About';
 import CodingProfiles from '@/components/CodingProfiles';
 import Blog from '@/components/Blog';
 import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
 
 /**
  * Main Portfolio Page
@@ -24,11 +22,9 @@ export default function Home() {
       <Projects />
       <SystemArchitecture />
       <Experience />
-      <About />
       <CodingProfiles />
       <Blog />
       <Contact />
-      <Footer />
     </main>
   );
 }

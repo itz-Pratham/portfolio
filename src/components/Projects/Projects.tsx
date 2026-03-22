@@ -1,11 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import AnimatedSection from '@/components/shared/AnimatedSection';
 import SectionTitle from '@/components/shared/SectionTitle';
-import Tag from '@/components/shared/Tag';
-import Button from '@/components/shared/Button';
 import projectsData from '@/data/projects.json';
 import type { Project } from '@/types';
 import styles from './Projects.module.css';
@@ -13,12 +10,6 @@ import styles from './Projects.module.css';
 const projects: Project[] = projectsData;
 
 export default function Projects() {
-    const [expanded, setExpanded] = useState<string | null>(null);
-
-    const toggle = (id: string) => {
-        setExpanded((prev) => (prev === id ? null : id));
-    };
-
     return (
         <AnimatedSection id="projects" className={styles.section}>
             <div className={styles.container}>
@@ -26,107 +17,81 @@ export default function Projects() {
                     title="Featured Projects"
                     subtitle="Ambitious systems built to solve real engineering problems"
                 />
-                <div className={styles.grid}>
+                <div className={styles.projectsList}>
                     {projects.map((project, idx) => {
-                        const isOpen = expanded === project.id;
+                        const indexStr = String(idx + 1).padStart(2, '0');
+                        const isEven = idx % 2 === 0;
+
                         return (
                             <motion.div
                                 key={project.id}
-                                className={styles.card}
-                                initial={{ opacity: 0, y: 20 }}
+                                className={`${styles.projectRow} ${isEven ? styles.rowNormal : styles.rowReverse}`}
+                                initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: idx * 0.1, ease: 'easeOut' }}
-                                onClick={() => toggle(project.id)}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] as const }}
                             >
-                                {/* Header */}
-                                <div className={styles.cardHeader}>
-                                    <span className={styles.category}>{project.category}</span>
-                                    <span className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ''}`}>
-                                        ›
-                                    </span>
+                                {/* Visual Mockup Side */}
+                                <div className={styles.visualCol}>
+                                    <div className={styles.mockupContainer}>
+                                        <div className={styles.glowBackdrop} />
+                                        <div className={styles.mockupGlass}>
+                                            <div className={styles.macChrome}>
+                                                <span className={`${styles.macDot} ${styles.macRed}`} />
+                                                <span className={`${styles.macDot} ${styles.macYellow}`} />
+                                                <span className={`${styles.macDot} ${styles.macGreen}`} />
+                                            </div>
+                                            <div className={styles.mockupInner}>
+                                                <span className={styles.mockupTitle}>{project.name}</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                {/* Name & Description */}
-                                <h3 className={styles.projectName}>{project.name}</h3>
-                                <p className={styles.projectDesc}>{project.description}</p>
+                                {/* Content Side */}
+                                <div className={styles.contentCol}>
+                                    <div className={styles.projectHeader}>
+                                        <span className={styles.metaInfo}>
+                                            {indexStr} / {project.category.toUpperCase()}
+                                        </span>
+                                        <div className={styles.metaLine} />
+                                    </div>
 
-                                {/* Tags (always visible) */}
-                                <div className={styles.tags}>
-                                    {project.techStack.map((tech) => (
-                                        <Tag key={tech} label={tech} />
-                                    ))}
-                                </div>
+                                    <h3 className={styles.projectName}>{project.name}</h3>
 
-                                {/* Expandable Content */}
-                                <AnimatePresence>
-                                    {isOpen && (
-                                        <motion.div
-                                            className={styles.expandedContent}
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: 'auto', opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                    <p className={styles.projectDesc}>
+                                        {project.solution || project.description}
+                                    </p>
+
+                                    <div className={styles.tags}>
+                                        {project.techStack.map((tech) => (
+                                            <span key={tech} className={styles.pillTag}>
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <div className={styles.links}>
+                                        <a
+                                            href={project.links.demo || project.links.code}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className={styles.textLink}
                                         >
-                                            {/* Problem */}
-                                            <div className={styles.detailBlock}>
-                                                <span className={styles.detailLabel}>Problem</span>
-                                                <p className={styles.detailText}>{project.problem}</p>
-                                            </div>
-
-                                            {/* Solution */}
-                                            <div className={styles.detailBlock}>
-                                                <span className={styles.detailLabel}>Solution</span>
-                                                <p className={styles.detailText}>{project.solution}</p>
-                                            </div>
-
-                                            {/* Impact */}
-                                            {project.metrics && project.metrics.length > 0 && (
-                                                <div className={styles.detailBlock}>
-                                                    <span className={styles.detailLabel}>Impact</span>
-                                                    <div className={styles.metricsList}>
-                                                        {project.metrics.map((metric) => (
-                                                            <span key={metric} className={styles.metric}>
-                                                                {metric}
-                                                            </span>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            )}
-
-                                            {/* Links */}
-                                            <div className={styles.links}>
-                                                {project.links.demo && (
-                                                    <Button
-                                                        label="View Live"
-                                                        href={project.links.demo}
-                                                        variant="ghost"
-                                                        arrow
-                                                        newTab
-                                                    />
-                                                )}
-                                                {project.links.code && (
-                                                    <Button
-                                                        label="View Code"
-                                                        href={project.links.code}
-                                                        variant="ghost"
-                                                        arrow
-                                                        newTab
-                                                    />
-                                                )}
-                                                {project.links.package && (
-                                                    <Button
-                                                        label="Package"
-                                                        href={project.links.package}
-                                                        variant="ghost"
-                                                        arrow
-                                                        newTab
-                                                    />
-                                                )}
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
+                                            View <span className={styles.arrow}>↗</span>
+                                        </a>
+                                        {project.links.code && (
+                                            <a href={project.links.code} target="_blank" rel="noreferrer" className={styles.textLink}>
+                                                GitHub <span className={styles.arrow}>↗</span>
+                                            </a>
+                                        )}
+                                        {project.links.package && (
+                                            <a href={project.links.package} target="_blank" rel="noreferrer" className={styles.textLink}>
+                                                Package <span className={styles.arrow}>↗</span>
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
                             </motion.div>
                         );
                     })}

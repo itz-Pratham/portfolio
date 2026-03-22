@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import AnimatedSection from '@/components/shared/AnimatedSection';
-import SectionTitle from '@/components/shared/SectionTitle';
 import Button from '@/components/shared/Button';
 import { SOCIAL_LINKS } from '@/lib/constants';
 import type { GitHubStats, LeetCodeStats } from '@/types';
@@ -19,10 +18,10 @@ export default function CodingProfilesClient({ gh, lc }: Props) {
     return (
         <AnimatedSection id="profiles" className={styles.section}>
             <div className={styles.container}>
-                <SectionTitle
-                    title="Coding Profiles"
-                    subtitle="Building in the open and solving hard problems"
-                />
+                <div className={styles.sectionHeader}>
+                    <h2 className={styles.mainTitle}>Coding Profiles</h2>
+                    <p className={styles.mainSubtitle}>Building in the open and solving hard problems</p>
+                </div>
                 <div className={styles.columns}>
                     {/* GitHub Column */}
                     <motion.div
@@ -59,8 +58,8 @@ export default function CodingProfilesClient({ gh, lc }: Props) {
                                     rel="noopener noreferrer"
                                     className={styles.repo}
                                 >
-                                    <div className={styles.repoName}>{repo.name}</div>
-                                    <div className={styles.repoDesc}>{repo.description}</div>
+                                    <h4 className={styles.repoName}>{repo.name}</h4>
+                                    <p className={styles.repoDesc}>{repo.description}</p>
                                     <div className={styles.repoMeta}>
                                         <span className={styles.repoLang}>{repo.language}</span>
                                         <span className={styles.repoStars}>★ {repo.stars}</span>
@@ -108,7 +107,7 @@ export default function CodingProfilesClient({ gh, lc }: Props) {
 
                         <div className={styles.distribution}>
                             {/* Easy */}
-                            <div>
+                            <div className={styles.distBlock}>
                                 <div className={styles.distRow}>
                                     <span className={styles.distLabel}>Easy</span>
                                     <span className={styles.distValue}>{lc.easySolved}</span>
@@ -121,7 +120,7 @@ export default function CodingProfilesClient({ gh, lc }: Props) {
                                 </div>
                             </div>
                             {/* Medium */}
-                            <div>
+                            <div className={styles.distBlock}>
                                 <div className={styles.distRow}>
                                     <span className={styles.distLabel}>Medium</span>
                                     <span className={styles.distValue}>{lc.mediumSolved}</span>
@@ -134,7 +133,7 @@ export default function CodingProfilesClient({ gh, lc }: Props) {
                                 </div>
                             </div>
                             {/* Hard */}
-                            <div>
+                            <div className={styles.distBlock}>
                                 <div className={styles.distRow}>
                                     <span className={styles.distLabel}>Hard</span>
                                     <span className={styles.distValue}>{lc.hardSolved}</span>

@@ -1,12 +1,20 @@
-.hero {
+.heroSection {
+    position: relative;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: var(--space-5xl) var(--space-xl);
+    overflow: hidden;
+    padding-top: var(--space-4xl);
+}
+
+.heroContent {
     max-width: var(--max-width);
     margin: 0 auto;
+    padding: 0 var(--space-xl);
+    width: 100%;
     position: relative;
+    z-index: 10;
 }
 
 /* Availability Badge */
@@ -14,87 +22,121 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
-    padding: 8px 16px;
-    background: rgba(34, 197, 94, 0.08);
-    border: 1px solid rgba(34, 197, 94, 0.2);
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 999px;
-    font-size: 0.85rem;
-    color: var(--accent-success);
-    margin-bottom: var(--space-xl);
-    width: fit-content;
+    font-size: 0.8rem;
+    font-weight: var(--fw-medium);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2xl);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .badgeDot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background: var(--accent-success);
     border-radius: 50%;
     animation: pulse 3s ease-in-out infinite;
 }
 
-/* Name */
-.name {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: var(--fw-semibold);
-    letter-spacing: -0.03em;
+/* Massive Title (Name) */
+.massiveTitle {
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
     color: var(--text-primary);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-xs);
+    text-shadow: 0 0 60px rgba(99, 102, 241, 0.25);
 }
 
 .nameAccent {
     color: var(--accent-primary);
 }
 
-/* Title & Value Prop */
-.title {
-    font-size: clamp(1.1rem, 2vw, 1.35rem);
-    font-weight: var(--fw-medium);
+/* Role / Title */
+.roleTitle {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: var(--fw-semibold);
     color: var(--accent-glow);
     margin-bottom: var(--space-lg);
+    letter-spacing: -0.01em;
 }
 
+/* Value Props */
 .valueProp {
-    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
     color: var(--text-secondary);
-    max-width: 55ch;
-    line-height: var(--lh-body);
-    margin-bottom: var(--space-2xl);
+    font-weight: var(--fw-medium);
+    max-width: 60ch;
+    margin-bottom: var(--space-sm);
 }
 
-/* CTAs */
-.ctas {
-    display: flex;
-    gap: var(--space-md);
-    flex-wrap: wrap;
+.subText {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 50ch;
+    line-height: var(--lh-body);
     margin-bottom: var(--space-3xl);
 }
 
-/* Scroll Indicator */
-.scroll {
-    position: absolute;
-    bottom: var(--space-2xl);
-    left: 50%;
-    transform: translateX(-50%);
+/* Minimal Text Links */
+.linksBlock {
     display: flex;
-    flex-direction: column;
+    gap: var(--space-2xl);
     align-items: center;
-    gap: var(--space-xs);
-    color: var(--text-tertiary);
-    font-size: 0.8rem;
-    animation: bounceScroll 2s ease-in-out infinite;
 }
 
-.scrollArrow {
-    font-size: 1.2rem;
+.textLink {
+    font-size: 1.1rem;
+    font-weight: var(--fw-medium);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    position: relative;
+    padding-bottom: 4px;
+    transition: color var(--transition-base);
+}
+
+.textLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base), background-color var(--transition-base);
+}
+
+.textLink:hover {
+    color: var(--accent-glow);
+}
+
+.textLink:hover::after {
+    transform: scaleX(1);
+    background-color: var(--accent-glow);
+}
+
+.arrow {
+    transition: transform var(--transition-base);
+}
+
+.textLink:hover .arrow {
+    transform: translate(2px, -2px);
 }
 
 /* Responsive */
-@media (max-width: 640px) {
-    .hero {
-        padding: var(--space-3xl) var(--space-md);
-    }
-
-    .ctas {
+@media (max-width: 768px) {
+    .linksBlock {
         flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
     }
 }
