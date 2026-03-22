@@ -20,7 +20,7 @@
 .projectRow {
     display: flex;
     align-items: center;
-    gap: var(--space-4xl);
+    gap: var(--space-5xl);
 }
 
 .rowNormal {
@@ -33,7 +33,7 @@
 
 /* Visual Mockup Side */
 .visualCol {
-    flex: 1.25;
+    flex: 1.6;
     position: relative;
     aspect-ratio: 16 / 10;
     display: flex;
@@ -71,8 +71,8 @@
 }
 
 .mockupGlass {
-    width: 95%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -137,7 +137,7 @@
 
 /* Content Side */
 .contentCol {
-    flex: 0.8;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
