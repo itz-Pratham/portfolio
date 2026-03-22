@@ -21,10 +21,10 @@ export default function AnimatedSection({
     className,
     id,
     delay = 0,
-    threshold = 0.2,
+    threshold = 0,
 }: AnimatedSectionProps) {
     const ref = useRef<HTMLElement>(null);
-    const isInView = useInView(ref, { once: true, amount: threshold });
+    const isInView = useInView(ref, { once: true, amount: threshold, margin: "0px" });
 
     return (
         <motion.section
