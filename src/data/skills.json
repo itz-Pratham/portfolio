@@ -1,0 +1,75 @@
+[
+    {
+        "category": "Backend & Distributed Systems",
+        "tags": [
+            "FastAPI",
+            "Kafka",
+            "Redis",
+            "PostgreSQL",
+            "SQLite",
+            "Event-Driven Architecture",
+            "REST APIs",
+            "Webhooks",
+            "Bloom Filters",
+            "Consistent Hashing"
+        ]
+    },
+    {
+        "category": "ML & GenAI",
+        "tags": [
+            "Python",
+            "LangChain",
+            "ChromaDB",
+            "RAG Pipelines",
+            "LSTMs",
+            "Scikit-learn",
+            "NLP",
+            "LLMs",
+            "Streamlit"
+        ]
+    },
+    {
+        "category": "Cloud & Infrastructure",
+        "tags": [
+            "AWS",
+            "GCP",
+            "Docker",
+            "Linux",
+            "CI/CD",
+            "Nginx",
+            "Webhooks"
+        ]
+    },
+    {
+        "category": "Languages & Systems",
+        "tags": [
+            "C++",
+            "Python",
+            "TypeScript",
+            "JavaScript",
+            "Rust",
+            "Haskell"
+        ]
+    },
+    {
+        "category": "Observability",
+        "tags": [
+            "Prometheus",
+            "Grafana",
+            "OpenTelemetry",
+            "OpenObserve",
+            "Kibana"
+        ]
+    },
+    {
+        "category": "Frontend (Supplementary)",
+        "tags": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "HTML5",
+            "CSS3",
+            "Responsive Design"
+        ]
+    }
+]

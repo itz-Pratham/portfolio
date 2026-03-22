@@ -1,0 +1,103 @@
+.section {
+    padding: var(--space-5xl) 0;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.card {
+    display: block;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    transition: transform var(--transition-base),
+        border-color var(--transition-base);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.date,
+.readTime {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: var(--fw-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+    transition: color var(--transition-fast);
+}
+
+.card:hover .title {
+    color: var(--accent-primary);
+}
+
+.excerpt {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+}
+
+.tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-primary);
+    background: rgba(99, 102, 241, 0.08);
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+}
+
+.readMore {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.9rem;
+    font-weight: var(--fw-medium);
+    color: var(--text-primary);
+    transition: color var(--transition-fast);
+}
+
+.card:hover .readMore {
+    color: var(--accent-primary);
+}
+
+.arrow {
+    transition: transform var(--transition-fast);
+}
+
+.card:hover .arrow {
+    transform: translateX(4px);
+}

@@ -1,0 +1,23 @@
+.tag {
+    display: inline-block;
+    padding: 6px 12px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: var(--fw-regular);
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius-sm);
+    transition: border-color var(--transition-fast),
+        background var(--transition-fast),
+        box-shadow var(--transition-fast),
+        color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.tag:hover {
+    border-color: var(--accent-primary);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.15);
+}

@@ -1,0 +1,106 @@
+.section {
+    padding: var(--space-5xl) 0;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.card:hover {
+    border-color: rgba(99, 102, 241, 0.15);
+    background: var(--bg-tertiary);
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.roleInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.role {
+    font-size: 1.15rem;
+    font-weight: var(--fw-semibold);
+    color: var(--text-primary);
+}
+
+.company {
+    font-size: 1rem;
+    font-weight: var(--fw-medium);
+    color: var(--accent-glow);
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.duration,
+.location {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+}
+
+.achievements {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.achievement {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: var(--space-md);
+    position: relative;
+}
+
+.achievement::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+@media (max-width: 640px) {
+    .cardTop {
+        flex-direction: column;
+    }
+
+    .meta {
+        align-items: flex-start;
+    }
+}

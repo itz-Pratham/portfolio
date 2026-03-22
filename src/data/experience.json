@@ -1,0 +1,59 @@
+[
+    {
+        "id": "juspay",
+        "company": "Juspay",
+        "role": "Product Engineer Intern",
+        "duration": "Jul 2025 – Present",
+        "location": "Bengaluru, India",
+        "achievements": [
+            "Implemented OTP auto-read and SafeMode-compliant authentication flows for the Breeze/1CCO platform, improving authentication success rates across 10k+ daily users.",
+            "Contributed to the open-source Clairvoyance project by developing MCP tools, improving automation accuracy and speeding up merchant debugging workflows.",
+            "Enhanced platform reliability by diagnosing Kafka consumer lag, rebalancing issues, and Lighthouse failures using OpenObserve & Kibana, reducing repeated incidents."
+        ],
+        "technologies": [
+            "React",
+            "TypeScript",
+            "Kafka",
+            "OpenObserve",
+            "Kibana",
+            "MCP"
+        ]
+    },
+    {
+        "id": "exl",
+        "company": "EXL Services",
+        "role": "GenAI Intern",
+        "duration": "Jun 2025 – Jul 2025",
+        "location": "Noida, India (Hybrid)",
+        "achievements": [
+            "Developed end-to-end GenAI/LLM pipelines for enterprise automation, building RAG flows using LangChain and ChromaDB integrated with internal APIs.",
+            "Optimized prompt-engineering workflows, improving response relevance and reducing hallucinations in knowledge retrieval tasks."
+        ],
+        "technologies": [
+            "Python",
+            "LangChain",
+            "ChromaDB",
+            "OpenAI API",
+            "RAG",
+            "Prompt Engineering"
+        ]
+    },
+    {
+        "id": "drdo",
+        "company": "Scientific Analysis Group, DRDO",
+        "role": "Machine Learning Intern",
+        "duration": "Jul 2024 – Aug 2024",
+        "location": "New Delhi, India",
+        "achievements": [
+            "Analyzed and compared regression and classification algorithms to determine optimal models for structured datasets.",
+            "Applied statistical validation techniques (precision, recall, classification reports) to ensure data-driven algorithm selection.",
+            "Optimized models with GridSearchCV hyperparameter tuning, achieving >90% accuracy with Logistic Regression."
+        ],
+        "technologies": [
+            "Python",
+            "Scikit-learn",
+            "GridSearchCV",
+            "Jupyter Notebooks"
+        ]
+    }
+]

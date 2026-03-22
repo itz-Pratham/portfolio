@@ -1,0 +1,26 @@
+[
+    {
+        "id": "blog-1",
+        "title": "Lorem ipsum dolor sit amet consectetur",
+        "date": "March 2026",
+        "readTime": "5 min read",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        "slug": "lorem-ipsum-post-1",
+        "tags": [
+            "Distributed Systems",
+            "Kafka"
+        ]
+    },
+    {
+        "id": "blog-2",
+        "title": "Ut enim ad minim veniam quis nostrud",
+        "date": "February 2026",
+        "readTime": "8 min read",
+        "excerpt": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.",
+        "slug": "lorem-ipsum-post-2",
+        "tags": [
+            "ML Engineering",
+            "RAG"
+        ]
+    }
+]

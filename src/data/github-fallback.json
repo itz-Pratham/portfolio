@@ -1,0 +1,35 @@
+{
+    "publicRepos": 20,
+    "followers": 5,
+    "totalStars": 8,
+    "featuredRepos": [
+        {
+            "name": "helios-platform",
+            "description": "Multi-cloud event reconciliation engine ensuring 99.99% consistency",
+            "language": "Python",
+            "stars": 2,
+            "url": "https://github.com/itz-Pratham/helios-platform"
+        },
+        {
+            "name": "mini-bitcoin-script",
+            "description": "Bitcoin Script parsing and execution engine — published on crates.io",
+            "language": "Rust",
+            "stars": 3,
+            "url": "https://github.com/itz-Pratham/mini-bitcoin-script"
+        },
+        {
+            "name": "VAE-Based-Multimodal-Anomaly-Detection-System",
+            "description": "Unsupervised anomaly detection using Variational Autoencoders",
+            "language": "Python",
+            "stars": 1,
+            "url": "https://github.com/itz-Pratham/VAE-Based-Multimodal-Anomaly-Detection-System"
+        },
+        {
+            "name": "Cold_Email_Generator",
+            "description": "LLM-powered cold email personalization using LangChain + ChromaDB",
+            "language": "Python",
+            "stars": 2,
+            "url": "https://github.com/itz-Pratham/Cold_Email_Generator"
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+/* ============================================
+   Design Tokens — Single Source of Truth
+   From: rulesPratham.txt Phase 2
+   ============================================ */
+
+:root {
+  /* ---- Background Layers ---- */
+  --bg-primary: #09090b;
+  --bg-secondary: #111113;
+  --bg-tertiary: #1c1c1f;
+
+  /* ---- Text ---- */
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #71717a;
+
+  /* ---- Accent (Indigo) ---- */
+  --accent-primary: #6366f1;
+  --accent-glow: #818cf8;
+  --accent-success: #22c55e;
+
+  /* ---- Borders ---- */
+  --border-subtle: #27272a;
+  --border-focus: #6366f1;
+
+  /* ---- Typography ---- */
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  --lh-heading: 1.15;
+  --lh-body: 1.65;
+
+  /* ---- Spacing Scale (rem) ---- */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  /* ---- Layout ---- */
+  --max-width: 1200px;
+  --section-padding: var(--space-4xl) var(--space-xl);
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 16px;
+
+  /* ---- Transitions ---- */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease-out;
+  --transition-smooth: 0.3s ease-out;
+  --transition-slow: 0.5s ease-out;
+}

@@ -1,0 +1,139 @@
+[
+    {
+        "id": "helios",
+        "name": "HELIOS",
+        "category": "Distributed Systems",
+        "description": "Multi-Cloud Event Reconciliation Platform",
+        "problem": "Modern multi-cloud architectures create event consistency nightmares. Events across AWS, GCP, and Azure can be lost, duplicated, or arrive out-of-order — causing silent data corruption at scale.",
+        "solution": "Designed and built a multi-cloud reconciliation engine that guarantees 99.99% event consistency using an O(1) Redis/Bloom-filter deduplication index and consistent hashing for distribution across 1M+ daily events. Added a MAPE-K self-healing loop with a TOPSIS decision engine for automated recovery.",
+        "techStack": [
+            "Python",
+            "Kafka",
+            "Redis",
+            "AWS",
+            "GCP",
+            "Azure",
+            "LSTM"
+        ],
+        "metrics": [
+            "99.99% event consistency across 3 cloud providers",
+            "MTTR reduced from hours to <30 seconds via intelligent replay",
+            "90%+ automated recovery without human intervention",
+            "O(1) Redis/Bloom-filter index (<1ms lookups, 0.01% FP)"
+        ],
+        "links": {
+            "code": "https://github.com/itz-Pratham/helios-platform"
+        }
+    },
+    {
+        "id": "cold-email",
+        "name": "Cold Email Generator",
+        "category": "ML & GenAI",
+        "description": "LLM-powered cold email personalization tool",
+        "problem": "Personalizing cold emails for job applications at scale is time-consuming. Generic emails have low conversion rates. Candidates need a way to auto-personalize based on specific job descriptions.",
+        "solution": "Built an LLM-powered Streamlit app that reads a job description, retrieves relevant projects from a ChromaDB vector store, and generates a tailored cold email via LangChain — cutting manual effort by ~80%.",
+        "techStack": [
+            "Python",
+            "LangChain",
+            "ChromaDB",
+            "Streamlit",
+            "LLMs"
+        ],
+        "metrics": [
+            "~80% reduction in manual email writing time",
+            "~50% improvement in customization speed and usability",
+            "Live and deployed on Streamlit"
+        ],
+        "links": {
+            "demo": "https://cold-email-generator.streamlit.app",
+            "code": "https://github.com/itz-Pratham/Cold_Email_Generator"
+        }
+    },
+    {
+        "id": "mini-bitcoin",
+        "name": "mini-bitcoin-script",
+        "category": "Systems / Rust",
+        "description": "Bitcoin Script parsing and execution engine in Rust",
+        "problem": "Understanding Bitcoin's scripting language requires either reading dense spec documents or using heavyweight implementations. No lightweight, educational yet functional engine existed in Rust.",
+        "solution": "Built a minimal Bitcoin Script parsing and execution engine in Rust, published as a crate on crates.io. Implements the full Script opcode set including cryptographic operations.",
+        "techStack": [
+            "Rust"
+        ],
+        "metrics": [
+            "Published on crates.io (Rust public package registry)",
+            "Full Bitcoin Script opcode parsing and execution",
+            "Clean, zero-dependency Rust implementation"
+        ],
+        "links": {
+            "code": "https://github.com/itz-Pratham/mini-bitcoin-script",
+            "package": "https://crates.io/crates/mini-bitcoin-script"
+        }
+    },
+    {
+        "id": "vae-anomaly",
+        "name": "VAE Anomaly Detection",
+        "category": "ML / Deep Learning",
+        "description": "Unsupervised multimodal anomaly detection using Variational Autoencoders",
+        "problem": "Industrial failures from unexpected sensor deviations are costly and hard to predict. Traditional threshold-based monitoring fails to capture subtle, multi-sensor correlated anomalies.",
+        "solution": "Designed an unsupervised anomaly detection system using Variational Autoencoders trained on multimodal sensor data. The model learns normal behavior distributions and flags statistical deviations.",
+        "techStack": [
+            "Python",
+            "PyTorch",
+            "Scikit-learn",
+            "Jupyter Notebooks"
+        ],
+        "metrics": [
+            "VAE architecture for unsupervised anomaly scoring",
+            "Multimodal input pipeline (multiple sensor streams)",
+            "Reconstruction error as anomaly signal"
+        ],
+        "links": {
+            "code": "https://github.com/itz-Pratham/VAE-Based-Multimodal-Anomaly-Detection-System"
+        }
+    },
+    {
+        "id": "sentiment-analyzer",
+        "name": "Amazon Review Sentiment Analyzer",
+        "category": "ML / NLP",
+        "description": "NLP pipeline for real-time sentiment analysis of product reviews",
+        "problem": "Manually analyzing thousands of product reviews for sentiment patterns is impractical. Teams need automated, accurate sentiment classification at scale.",
+        "solution": "Engineered a scalable NLP pipeline using TF-IDF and Logistic Regression, deployed as an interactive Streamlit application for real-time sentiment analysis with batch processing.",
+        "techStack": [
+            "Python",
+            "Scikit-learn",
+            "Streamlit",
+            "NLP"
+        ],
+        "metrics": [
+            "93.49% accuracy on both train and test sets",
+            "ROC-AUC score of 0.9803",
+            "Cross-validated ROC-AUC of 0.9365"
+        ],
+        "links": {
+            "demo": "https://amazon-sentiment-analyzer.streamlit.app",
+            "code": "https://github.com/itz-Pratham/Amazon-Review-Sentiment-Analyzer"
+        }
+    },
+    {
+        "id": "transaction-analyzer",
+        "name": "Transaction Analyzer",
+        "category": "Full-Stack / Analytics",
+        "description": "Financial data analytics dashboard with automated reporting",
+        "problem": "Tracking income, expenses, and financial trends across raw CSV transaction data is tedious and error-prone without purpose-built tooling.",
+        "solution": "Built a Streamlit-based web application that processes raw transaction data into clear breakdowns, interactive charts, and automated Excel reports.",
+        "techStack": [
+            "Python",
+            "Pandas",
+            "Streamlit"
+        ],
+        "metrics": [
+            "30% improvement in data processing efficiency",
+            "Automated Excel report generation",
+            "Interactive charts and visualizations"
+        ],
+        "links": {
+            "demo": "https://transaction-analyzer.streamlit.app",
+            "code": "https://github.com/itz-Pratham/Transaction_Analysis"
+        }
+    }
+]

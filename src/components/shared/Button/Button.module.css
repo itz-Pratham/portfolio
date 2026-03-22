@@ -1,0 +1,66 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 12px 24px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: var(--fw-medium);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-base);
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Primary: filled accent */
+.primary {
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+}
+
+.primary:hover {
+    background: var(--accent-glow);
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+/* Secondary: outlined */
+.secondary {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+}
+
+.secondary:hover {
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+}
+
+/* Ghost: no border, text only */
+.ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    padding: 8px 0;
+}
+
+.ghost:hover {
+    color: var(--accent-primary);
+}
+
+.ghost .arrow {
+    transition: transform var(--transition-fast);
+}
+
+.ghost:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* Arrow */
+.arrow {
+    font-size: 1.1em;
+    transition: transform var(--transition-fast);
+}
