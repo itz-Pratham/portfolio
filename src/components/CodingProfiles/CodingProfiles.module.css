@@ -70,12 +70,13 @@
 }
 
 .statValue {
-    font-size: 1.8rem;
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
     font-weight: 700;
     color: #818cf8;
     /* Softer sleek indigo */
     font-family: var(--font-mono);
     line-height: 1.1;
+    white-space: nowrap;
 }
 
 .statLabel {
@@ -203,5 +204,14 @@
 @media (max-width: 768px) {
     .columns {
         grid-template-columns: 1fr;
+    }
+
+    .statsGrid {
+        gap: var(--space-xs);
+    }
+
+    .statValue {
+        font-size: 1.3rem;
+        white-space: nowrap;
     }
 }

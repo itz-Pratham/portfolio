@@ -27,7 +27,6 @@ export const FEATURED_REPOS: string[] = [
     'helios-platform',
     'mini-bitcoin-script',
     'VAE-Based-Multimodal-Anomaly-Detection-System',
-    'Cold_Email_Generator',
 ] as const;
 
 export const NAV_ITEMS = [
