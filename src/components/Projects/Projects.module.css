@@ -262,6 +262,11 @@
         gap: var(--space-2xl);
     }
 
+    .visualCol {
+        width: 100%;
+        flex: none;
+    }
+
     .projectsList {
         gap: var(--space-4xl);
     }
